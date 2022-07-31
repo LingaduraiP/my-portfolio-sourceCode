@@ -1,0 +1,179 @@
+.header {
+    width: 100%;
+    height: 4rem;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+
+    .logo {
+        width: 12rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    .nav {
+        margin-right: 4rem;
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            position: fixed;
+            top: 1rem;
+            right: 2.5rem;
+            border-left: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+            svg {
+                height: 35px;
+                width: 35px;
+                color: var(--h-color);
+            }
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            .active {
+                color: var(--h-color);
+                // border-bottom: 1px solid var(--h-color);
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 3px;
+                    width: 100%;
+                    background-color: var(--h-color);
+                    left: 0;
+                    bottom: -5px;
+                    z-index: -1;
+                    box-shadow: var(--shadow3);
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 3px;
+                    width: 100%;
+                    background-color: var(--h-color);
+                    left: 0;
+                    bottom:-5px;
+              
+                    z-index: -1;
+                    box-shadow: var(--shadow3);
+                }
+            }
+            li {
+                font-size: var(--s-font);
+                font-weight: 500;
+                color: var(--f-color);
+
+                &:hover {
+                    cursor: pointer;
+                    color: var(--h-color);
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 900px) {
+    ul {
+        z-index: 99;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 4rem;
+        right: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        background-color: var(--bg-color);
+
+        li {
+            transition: all 0.3s;
+            &:hover {
+                transform: translateX(25px) scale(1.3);
+            }
+        }
+    }
+}
+
+.ulanimation {
+    animation-name: anil;
+    animation-duration: 0.33s;
+}
+@keyframes anil {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sticky {
+    position: fixed;
+    z-index: 200;
+    animation: stik 0.3s;
+    height: 4rem;
+    backdrop-filter: blur(100px);
+    box-shadow: var(--shadow2);
+
+    @media only screen and (max-width: 900px) {
+        ul {
+            z-index: 99;
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            top: 4rem;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+            background-color: var(--bg-color);
+            li {
+                transition: all 0.3s;
+                &:hover {
+                    transform: translateX(25px) scale(1.3);
+                }
+            }
+        }
+    }
+
+    .ulanimation {
+        animation-name: anil;
+        animation-duration: 0.33s;
+    }
+    @keyframes anil {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+@keyframes stik {
+    0% {
+        top: -4rem;
+    }
+    100% {
+        top: 0rem;
+    }
+}

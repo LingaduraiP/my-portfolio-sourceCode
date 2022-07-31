@@ -1,0 +1,242 @@
+.theme {
+    position: absolute;
+}
+
+// Tools Icons
+.setIcon {
+    position: fixed;
+    top: 45%;
+    right: 3rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 5px rgba(4, 4, 251, 0.12);
+    transition: all 0.1s;
+    animation: slowrotate 20s linear infinite;
+
+    &:active {
+        transform: scale(0.9);
+    }
+    &:hover {
+        cursor: pointer;
+
+        svg {
+            color: var(--teal);
+        }
+    }
+    svg {
+        height: 25px;
+        width: 25px;
+        color: var(--h-color);
+    }
+}
+
+@keyframes slowrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(360deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+// Drager
+.showIcons {
+    height: 8rem;
+    width: 10rem;
+    border-radius: 10px;
+    gap: 1rem;
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    box-shadow: var(--shadow);
+    z-index: 99;
+    position: fixed;
+    top: 50%;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-left: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    .drager {
+        margin-top: 1rem;
+        input {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 5px;
+            border-radius: 5px;
+            background: linear-gradient(
+                to right,
+                (
+                    hsl(0, 100%, 50%),
+                    hsl(30, 100%, 50%),
+                    hsl(60, 100%, 50%),
+                    hsl(90, 100%, 50%),
+                    hsl(120, 100%, 50%),
+                    hsl(150, 100%, 50%),
+                    hsl(180, 100%, 50%),
+                    hsl(210, 100%, 50%),
+                    hsl(240, 100%, 50%),
+                    hsl(270, 100%, 50%),
+                    hsl(300, 100%, 50%),
+                    hsl(330, 100%, 50%),
+                    hsl(360, 100%, 50%)
+                )
+            );
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 1rem;
+                width: 1rem;
+                border-radius: 50%;
+                background-color: var(--h-color);
+            }
+        }
+    }
+}
+
+.show {
+    transform: translateX(0);
+    animation: iconshow 0.3s;
+}
+.hide {
+    transform: translateX(200%);
+    animation: hideshow 0.3s;
+}
+
+@keyframes iconshow {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes hideshow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+.rotate {
+    svg {
+        animation: rotate 0.3s;
+        transform: rotate(0deg);
+    }
+}
+.rrotate {
+    svg {
+        animation: rrotate 0.3s;
+        transform: rotate(0deg);
+    }
+}
+
+// icon Rotation
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+// Radio contianer
+
+.radio-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 4rem;
+    position: relative;
+
+    .radio {
+        -webkit-appearance: none;
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+        // border-top-left-radius: ;
+        // border-bottom-left-radius: 50%;
+        // border-top-right-radius: 50%;
+        // border-bottom-right-radius: 50%;
+        background-color: var(--h-color);
+        transition: all 0.3s;
+    }
+    .day {
+        height: 1.3rem;
+        width: 1.3rem;
+
+        position: absolute;
+        top: 5px;
+        right: 2px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            height: 1.3rem;
+            width: 1.3rem;
+            color: white;
+        }
+    }
+}
+
+.on {
+    transform: translateX(-20%);
+    animation: on 0.3s;
+}
+.off {
+    transform: translateX(-170%);
+    animation: off 0.3s;
+}
+@keyframes on {
+    0% {
+        transform: translateX(-170%);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+}
+@keyframes off {
+    0% {
+        transform: translateX(-20%);
+    }
+    100% {
+        transform: translateX(-170%);
+    }
+}

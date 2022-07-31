@@ -1,0 +1,245 @@
+.home {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-gap: 2rem;
+    height: calc(100vh - 4rem);
+
+    .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .imgdiv {
+            height: 30rem;
+            width: 30rem;
+            position: relative;
+            border-radius: 50%;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                box-shadow: var(--shadow);
+                position: absolute;
+                border-left: 1px solid var(--border-color);
+                border-top: 1px solid var(--border-color);
+                box-shadow: var(--shadow2);
+            }
+        }
+    }
+
+    // Right Side
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .r-details {
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            gap: 1rem;
+
+            .arrow-1 {
+                position: absolute;
+                font-family: "Edu VIC WA NT Beginner", cursive;
+                font-size: 1.5rem;
+                color: var(--h-color);
+                top: -5rem;
+                left: -2rem;
+                font-weight: 700;
+            }
+            .arrow-2 {
+                position: absolute;
+                font-family: "Edu VIC WA NT Beginner", cursive;
+                font-size: 1.5rem;
+                color: var(--h-color);
+                font-weight: 700;
+                bottom: -5rem;
+                right: -2rem;
+            }
+            .text {
+                color: var(--f-color);
+                font-weight: bolder;
+                font-size: var(--p-s-font);
+                letter-spacing: 1px;
+            }
+            .iam {
+                display: flex;
+                gap: 2rem;
+                text-transform: uppercase;
+                .iam-text {
+                    color: var(--f-color);
+                    font-weight: 700;
+                    font-size: var(--h-font);
+                    font-style: italic;
+                    letter-spacing: 1px;
+                    font-family: "Adlery-pro", sans-serif;
+                }
+                .name {
+                    color: var(--h-color);
+                    font-weight: 800;
+                    font-size: var(--hs-font);
+                    letter-spacing: 1px;
+                }
+            }
+            .dev {
+                display: flex;
+                gap: 1rem;
+                font-family: "Adlery-pro", sans-serif;
+                span {
+                    &:nth-of-type(1) {
+                        color: var(--f-color);
+                    }
+                    &:nth-of-type(2) {
+                        color: var(--teal);
+                    }
+
+                    font-weight: 700;
+                    font-size: var(--h-s-font);
+                    letter-spacing: 1px;
+                }
+            }
+            .buttons {
+                display: flex;
+                gap: 2rem;
+                button {
+                    margin-top: 2rem;
+                    border: none;
+                    outline: none;
+                    height: 2rem;
+                    width: 6rem;
+                    font-size: var(--p-font);
+                    font-weight: 600;
+                    transition: all 0.3s;
+                    border-radius: 10px;
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.1);
+                    }
+                    &:nth-of-type(1) {
+                        background-color: var(--h-color);
+                        color: var(--bg-color);
+                    }
+                    &:nth-of-type(2) {
+                        background-color: transparent;
+                        border: 1px solid var(--h-color);
+                        color: var(--h-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .home {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4rem;
+        .left {
+            width: 100%;
+            .imgdiv {
+                height: 20rem;
+                width: 20rem;
+            }
+        }
+        .right {
+            .r-details {
+                .arrow-1 {
+                    font-size: 1rem;
+                    top: -2rem;
+                    left: -1rem;
+                }
+                .arrow-2 {
+                    font-size: 1rem;
+                    bottom: -2rem;
+                    right: -1rem;
+                }
+                .iam {
+                    .iam-text {
+                        font-size: 0.9rem;
+                    }
+                    .name {
+                        font-size: 2rem;
+                    }
+                }
+                .dev {
+                    span {
+                        &:nth-of-type(1) {
+                            font-size: 1.5rem;
+                        }
+                        &:nth-of-type(2) {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media Queries at 450px
+
+@media only screen and (max-width: 450px) {
+    .home {
+        margin-bottom: -4rem;
+        .left {
+            .imgdiv {
+                height: 15rem;
+                width: 15rem;
+            }
+        }
+        .right {
+            .r-details {
+                .arrow-1 {
+                    font-size: 0.8rem;
+                    top: -2rem;
+                    left: 0;
+                }
+                .arrow-2 {
+                    font-size: 0.8rem;
+                    bottom: -2rem;
+                    right: 0;
+                }
+                .iam {
+                    gap: 1rem;
+                    .iam-text {
+                        font-size: 0.6rem;
+                    }
+                    .name {
+                        font-size: 1.4rem;
+                    }
+                }
+                .dev {
+                    span {
+                        &:nth-of-type(1) {
+                            font-size: 1.2rem;
+                        }
+                        &:nth-of-type(2) {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.spanactive {
+    color: red;
+    background-color: red;
+}
+.inputactive {
+    border: 2px solid red;
+}
